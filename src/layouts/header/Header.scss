@@ -1,0 +1,129 @@
+@import '../../styles/available.scss';
+
+#header{
+    .container-fluid{
+        max-width: 1400px;
+    }
+    .top-header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        .top-header-left{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            .header-swiper{
+                margin-left: 68px;
+                width: 370px;
+                height: fit-content;
+                font-size: 12px;
+                color: gray;
+                .swiper-slide{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .arrow{
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: 22px;
+                height: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid rgb(212, 212, 212);
+                color: rgb(184, 184, 184);
+                font-size: 12px;
+                &.next{
+                    left: 125px;
+                }
+                &.pre{
+                    left: 98px;
+                }
+            }
+        }
+
+        .top-header-right{
+            color: gray;
+            font-size: 14px;
+            white-space: nowrap;
+            @include mobile {     
+                display: none; 
+            }    
+        }
+
+        .top-title{
+            padding: 8px 15px;
+            display: inline-block;
+            background-color: red;
+            color: white;
+        }
+    }
+   
+    .center-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        @include mobile {     
+            flex-direction: column; 
+        }  
+        .logo{
+            width: 200px;
+            @include mobile {     
+                display: none; 
+            }  
+        }
+        .code-image{
+            width: 560px;
+            @include mobile {     
+                width: 100%;
+            }  
+        }
+    }
+
+    .logo-mobile{
+        display: none;
+        @include mobile {     
+            display: block;
+            img{
+                width: 200px;
+            }
+        } 
+    }
+
+    .bg-body-tertiary{
+        padding: 0;
+    }
+
+    .nav-link{
+        color: gray;
+        padding: 8px 15px;
+        line-height: 30px;
+        @include mobile {     
+            margin-top: 5px;
+        } 
+        &.active{
+            background-color: red;
+            color: white;
+        }
+    }
+
+    form{
+        padding: 5px 0;
+        .form-control{
+            border-radius: 0;
+        }
+        .button-search{
+            border-radius: 0;
+            background-color: #E9ECEF;
+            border-color: #bfc1c3;
+            color: #505050;
+        }
+    }
+}
