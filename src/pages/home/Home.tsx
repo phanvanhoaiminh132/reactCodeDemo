@@ -5,12 +5,13 @@ import CategoryList from "../../components/category-list/CategoryList";
 import CaroselFeatured from "../../components/carosel-featured/CaroselFeatured";
 import CaroselTemplate from "../../components/carosel-template/CaroselTemplate";
 import PopularList from "../../components/popular-list/PopularList";
-import "./Home.scss";
 import FollowUs from "../../components/follow-us/FollowUs";
 import NewsLetter from "../../components/news-letter/Newsletter";
 import Tranding from "../../components/tranding/Tranding";
 import { tagsFooterTag } from "../../contant/Contant";
 import TagList from "../../components/tag-list/TagList";
+import PostPopular from "../../components/post-popular/PostPopular";
+import "./Home.scss";
 
 const Home = () =>{
     return(
@@ -47,6 +48,7 @@ const Home = () =>{
 
                 <Col lg={8} md={12}>
                     <PopularList/>
+                    <PostPopular/>
                     <img className="popular-img" src="/images/img-center-header.png" alt="img-popular"/>
                     <PopularList/>
                 </Col>
@@ -54,12 +56,10 @@ const Home = () =>{
                 <Col lg={4} md={12}>
                     <FollowUs/>
                     <NewsLetter/>
-                    <Tranding />
-
+                    <Tranding/>
                     <TagList data={tagsFooterTag} styleSiderBar={true}/>
                 </Col>
             </Row>
-            
         </Container>
     )
 }

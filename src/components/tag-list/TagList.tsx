@@ -1,11 +1,7 @@
-import { tagType } from "../../contant/Contant";
+import { tagListType } from "../../contant/Contant";
 import "./TagList.scss";
-interface dataType {
-    data: tagType,
-    styleSiderBar?: boolean 
-}
 
-const TagList = ({data, styleSiderBar}:dataType) =>{
+const TagList = ({data, styleSiderBar}:tagListType) =>{
     return(
         <div className="tag">
             <p className={"tag-title" + (styleSiderBar ? " style-bar": "")}>{data.title}</p>

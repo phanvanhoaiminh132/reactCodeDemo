@@ -13,6 +13,11 @@ export interface categoryTagType {
     isShowViewAll?: boolean;
 }
 
+export interface tagListType {
+    data: tagType,
+    styleSiderBar?: boolean 
+}
+
 export const categoryFooterTag:tagType = {
     title: "Categories",
     tags: [

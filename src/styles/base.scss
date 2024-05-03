@@ -1,3 +1,15 @@
 body{
     background-color: #F2F2F2;
 }
+
+.breadcrumb-template{
+    margin-top: 25px;
+    .breadcrumb{
+        margin-bottom: 0;
+        .breadcrumb-item{
+            a{
+                color: red;
+            }
+        }
+    }
+}

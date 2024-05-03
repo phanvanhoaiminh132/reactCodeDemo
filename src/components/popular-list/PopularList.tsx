@@ -2,7 +2,6 @@ import { Col, Row } from "react-bootstrap";
 import "./PopularList.scss";
 import { categoryTagType } from "../../contant/Contant";
 import CategoryTab from "../category-tab/CategoryTab";
-import PostItem from "../post-item/PostItem";
 
 const PopularList = () =>{
     const categoryTab:categoryTagType  ={
@@ -31,19 +30,6 @@ const PopularList = () =>{
                         <p className="title">Sanctus amet sed amet ipsum lorem</p>
                         <p className="description">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
                     </div>
-                </Col>
-
-                <Col lg={12} xl={6}>
-                    <PostItem/>
-                </Col>
-                <Col lg={12} xl={6}>
-                    <PostItem/>
-                </Col>
-                <Col lg={12} xl={6}>
-                    <PostItem/>
-                </Col>
-                <Col lg={12} xl={6}>
-                    <PostItem/>
                 </Col>
             </Row>
         </div>

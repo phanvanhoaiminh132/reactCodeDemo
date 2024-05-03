@@ -1,0 +1,20 @@
+.scroll-top{
+    width: 35px;
+    border-radius: 0;
+    height: 35px;
+    position: fixed;
+    font-size: 10px;
+    bottom: 25px;
+    background-color: #5A5E62;
+    padding: 8px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    &.hide{
+        z-index: -1;
+        opacity: 0;
+    }
+}
