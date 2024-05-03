@@ -1,0 +1,27 @@
+@import '../../styles/available.scss';
+
+.tag{
+    .tag-title{
+        font-size: 25px;
+        font-weight: bold;
+        @include mobile {     
+            margin-top: 40px;
+        } 
+    }
+    .tag-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include mobile {     
+            width: 500px;
+            max-width: 100%; 
+        } 
+        .tag-item{
+            font-size: 14px;
+            color: gray;
+            padding: 2px 8px;
+            border: 1px solid gray;
+            margin: 0 5px 5px 0;
+        }
+    }
+}

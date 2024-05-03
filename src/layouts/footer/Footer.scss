@@ -1,0 +1,52 @@
+@import '../../styles/available.scss';
+
+#footer{
+    background-color: white;
+    padding: 40px 0 1px 0;
+    .container-fluid{
+        max-width: 1500px;
+    }
+
+    .logo{
+        width: 200px;
+    }
+
+    .title-footer{
+        color: gray;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .list-social{
+        display: flex;
+        flex-direction: row;
+        .box-social{
+            width: 28px;
+            height: 28px;
+            border: 1px solid rgb(145, 144, 144);
+            margin-right: 10px;
+            color: rgb(145, 144, 144);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+    }
+
+    .footer-bottom{
+        width: 100%;
+        background-color:#F2F2F2;
+        font-size: 16px;
+        text-align: center;
+        color: gray;
+        margin-top: 30px;
+        padding: 15px 5px 170px 5px;
+        .red{
+            color: red;
+            font-weight: 700;
+        }
+        @include mobile {     
+            padding: 15px 5px 100px 5px;
+        } 
+    }
+}

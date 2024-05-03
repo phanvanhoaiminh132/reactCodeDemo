@@ -1,0 +1,24 @@
+@import '../../styles/available.scss';
+
+.link{
+    .link-title{
+        font-size: 25px;
+        font-weight: bold;
+        @include mobile {     
+            margin-top: 40px;
+        } 
+    }
+    .link-list{
+        display: flex;
+        flex-direction: column;
+        .link-item{
+            font-size: 16px;
+            color: gray;
+            margin: 0 5px 5px 0;
+            .icon{
+                color: black;
+                margin-right: 5px;
+            }
+        }
+    }
+}
