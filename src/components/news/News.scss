@@ -1,0 +1,39 @@
+.news{
+    margin-top: 35px;
+    padding-bottom: 40px;
+    background-color: white;
+    .main-img{
+        width: 100%;
+    }
+
+    .box-new{
+        padding: 0 20px;
+        .main-title{
+            margin-top: 10px;
+        }
+    }
+
+    .sub-img{
+        display: inline;
+        width: 300px;
+        &.left{
+            margin: 10px 10px 0 0;
+            float: left;
+        }
+        &.right{
+            float: right;
+            margin: 10px 0 0 10px;
+        }
+    }
+
+    .sub-title{
+        margin-top: 20px;
+    }
+
+    .title{
+        display: inline;
+    }
+
+
+}
+

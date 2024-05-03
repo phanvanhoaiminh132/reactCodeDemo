@@ -4,6 +4,7 @@ import NewsLetter from "../../components/news-letter/Newsletter";
 import Tranding from "../../components/tranding/Tranding";
 import TagList from "../../components/tag-list/TagList";
 import { tagsFooterTag } from "../../contant/Contant";
+import News from "../../components/news/News";
 
 const SingleNews = () =>{
     return(
@@ -21,7 +22,7 @@ const SingleNews = () =>{
             </Col>
 
             <Col lg={8} md={12}>
-               
+               <News/>
             </Col>
 
             <Col lg={4} md={12}>
