@@ -1,0 +1,53 @@
+
+@import "../../styles/available.scss";
+
+.follow-us{
+    margin-top: 35px;
+    @include mobile{
+        margin-top: 10px;
+    }
+
+    .follow-item{
+        width: 100%;
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 15px;
+        .icon{
+            color: white;
+        }
+
+        .title{
+            color: white;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        &.blue{
+            background-color: #39569E;
+
+        }
+
+        &.blue-1{
+            background-color: #52AAF4;
+        }
+
+        &.blue-2{
+            background-color: #1BB7E9;
+        }
+
+        &.green{
+            background-color: #0285AD;
+        }
+
+        &.pubple{
+            background-color: #C8369D;
+        }
+
+        &.orange{
+            background-color: #DC472E;
+        }
+    }
+}
+

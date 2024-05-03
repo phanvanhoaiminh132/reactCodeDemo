@@ -1,0 +1,23 @@
+@import "../../styles/available.scss";
+
+.category-tab{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .title{
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(48, 48, 48);
+    }
+    .view-all{
+        color: gray;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

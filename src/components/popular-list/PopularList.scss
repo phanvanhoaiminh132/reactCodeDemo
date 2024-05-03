@@ -1,0 +1,28 @@
+.popular{
+    margin-top: 35px;
+    .popular-item{
+        background-color: white;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        img{
+            width: 100%;
+        }
+        .time-title{
+            padding: 0 20px;
+            margin: 20px 0 10px 0;
+            color: gray;
+            .red{
+                color: red;
+            }
+        }
+        .title{
+            font-size: 20px;
+            padding: 0 20px;
+        }
+
+        .description{
+            color: gray;
+            padding: 0 20px;
+        }
+    }
+}

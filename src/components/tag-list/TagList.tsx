@@ -1,12 +1,14 @@
-import React from "react";
 import { tagType } from "../../contant/Contant";
 import "./TagList.scss";
+interface dataType {
+    data: tagType,
+    styleSiderBar?: boolean 
+}
 
-
-const TagList: React.FC<tagType> = (data: tagType) =>{
+const TagList = ({data, styleSiderBar}:dataType) =>{
     return(
         <div className="tag">
-            <p className="tag-title">{data.title}</p>
+            <p className={"tag-title" + (styleSiderBar ? " style-bar": "")}>{data.title}</p>
             <div className="tag-list">
             {
                 data.tags ?

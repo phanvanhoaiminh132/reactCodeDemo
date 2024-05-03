@@ -59,7 +59,7 @@ const Header = () =>{
                 </div>
             </Container>
             
-            <Navbar expand="md" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-body-tertiary">
                 <Container fluid>
                     <Navbar.Brand href="#home" className="logo-mobile">
                         <img className="logo" src="/images/logo.png" alt="Logo_Web"></img>

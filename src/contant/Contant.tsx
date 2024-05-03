@@ -8,6 +8,11 @@ export interface linkType {
     links?: string[]
 }
 
+export interface categoryTagType {
+    title?: string;
+    isShowViewAll?: boolean;
+}
+
 export const categoryFooterTag:tagType = {
     title: "Categories",
     tags: [

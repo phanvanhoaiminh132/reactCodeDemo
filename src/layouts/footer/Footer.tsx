@@ -25,10 +25,10 @@ const Footer = () =>{
                         </div>
                     </Col>
                     <Col lg={3} md={12}>
-                        <TagList {...categoryFooterTag}/>
+                        <TagList data={categoryFooterTag}/>
                     </Col>
                     <Col lg={3} md={12}>
-                        <TagList {...tagsFooterTag}/>
+                        <TagList data={categoryFooterTag}/>
                     </Col>
                     <Col lg={3} md={12}>
                         <LinkList {...footerLink}/>

@@ -2,11 +2,21 @@
 
 .tag{
     .tag-title{
+        background-color: white;
         font-size: 25px;
         font-weight: bold;
         @include mobile {     
             margin-top: 40px;
         } 
+
+        &.style-bar{
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            margin-top: 15px;
+        }
     }
     .tag-list{
         display: flex;
@@ -17,6 +27,7 @@
             max-width: 100%; 
         } 
         .tag-item{
+            cursor: pointer;
             font-size: 14px;
             color: gray;
             padding: 2px 8px;
