@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Twitter, Facebook, Instagram, Linkedin, Youtube } from "react-bootstrap-icons";
-import { footerLink, categoryFooterTag, tagsFooterTag } from "../../contant/Contant";
+import { footerLink, categoryFooterTag } from "../../contant/Contant";
 import TagList from "../../components/tag-list/TagList";
 import LinkList from "../../components/link-list/LinkList";
 import "./Footer.scss";

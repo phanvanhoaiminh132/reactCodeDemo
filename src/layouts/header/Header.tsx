@@ -2,11 +2,13 @@ import { Button, Container, Form, Nav, NavDropdown, Navbar } from "react-bootstr
 import { Search, ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Autoplay, Navigation, Scrollbar } from 'swiper/modules';
+import { Link, useLocation  } from "react-router-dom";
 import moment from 'moment';
-import "./Header.scss";
 import React from "react";
+import "./Header.scss";
 
 const Header = () =>{
+    const location = useLocation(); 
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
 
@@ -52,32 +54,32 @@ const Header = () =>{
 
             <Container fluid>
                 <div className="center-header">
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand as={Link} to="/">
                         <img className="logo" src="/images/logo.png" alt="Logo_Web"></img>
                     </Navbar.Brand>
-                    <img className="code-image" src="/images/img-center-header.png" alt="code-image"></img>
+                    <img className="code-img" src="/images/img-center-header.png" alt="code-img"></img>
                 </div>
             </Container>
             
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container fluid>
-                    <Navbar.Brand href="#home" className="logo-mobile">
+                    <Navbar.Brand as={Link} to="/" className="logo-mobile">
                         <img className="logo" src="/images/logo.png" alt="Logo_Web"></img>
                     </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav defaultActiveKey="#home" className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#category">Category</Nav.Link>
-                            <Nav.Link href="#single-news">Single News</Nav.Link>
+                        <Nav className="me-auto">
+                            <Nav.Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} as={Link} to="/">Home</Nav.Link>
+                            <Nav.Link className={`nav-link ${location.pathname === "/category" ? "active" : ""}`} as={Link} to="/category">Category</Nav.Link>
+                            <Nav.Link className={`nav-link ${location.pathname === "/single-news" ? "active" : ""}`} as={Link} to="/single-news">Single News</Nav.Link>
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Dropdown1</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Dropdown2</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Dropdown3</NavDropdown.Item>
+                                <NavDropdown.Item>Dropdown1</NavDropdown.Item>
+                                <NavDropdown.Item>Dropdown2</NavDropdown.Item>
+                                <NavDropdown.Item>Dropdown3</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href="#link">Contact</Nav.Link>
+                            <Nav.Link>Contact</Nav.Link>
                         </Nav>
 
                         <Form className="d-flex">
