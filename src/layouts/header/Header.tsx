@@ -7,7 +7,7 @@ import moment from 'moment';
 import React from "react";
 import "./Header.scss";
 
-const Header = () =>{
+const Header = React.memo(() =>{
     const location = useLocation(); 
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
@@ -29,11 +29,6 @@ const Header = () =>{
                                 onBeforeInit={(swiper:any) => {
                                     swiper.params.navigation.prevEl = navigationPrevRef.current;
                                     swiper.params.navigation.nextEl = navigationNextRef.current;
-                                }}
-                                autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                    pauseOnMouseEnter: true
                                 }}
                                 loop={true}
                                 slidesPerView={1}
@@ -97,6 +92,6 @@ const Header = () =>{
             </Navbar>
         </div>
     )
-}
+})
 
 export default Header;

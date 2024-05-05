@@ -1,4 +1,4 @@
-import { tagListType } from "../../contant/Contant";
+import { tagListType } from "../../types/Types";
 import "./TagList.scss";
 
 const TagList = ({data, styleSiderBar}:tagListType) =>{

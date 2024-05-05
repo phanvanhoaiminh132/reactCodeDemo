@@ -1,8 +1,8 @@
 import { Col, Row } from "react-bootstrap";
-import "./FollowUs.scss";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "react-bootstrap-icons";
 import CategoryTab from "../category-tab/CategoryTab";
-import { categoryTagType } from "../../contant/Contant";
+import { categoryTagType } from "../../types/Types";
+import "./FollowUs.scss";
 
 const FollowUs = () =>{
     const categoryTab:categoryTagType  ={

@@ -11,52 +11,147 @@ import Tranding from "../../components/tranding/Tranding";
 import { tagsFooterTag } from "../../contant/Contant";
 import TagList from "../../components/tag-list/TagList";
 import PostPopular from "../../components/post-popular/PostPopular";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getBusinessData, getCategoryData, getEntertainmentData, getFeaturedData, getPopularData, getPostPopularData, getSportsData, getTechnologyData } from "../../actions/NewsAction";
+import { useSelector } from 'react-redux';
 import "./Home.scss";
+import { RootState } from "../../reducers";
+import { articlesType } from "../../types/Types";
 
 const Home = () =>{
+    const dispatch = useDispatch<any>();
+
+    useEffect(() => {
+        dispatch(getBusinessData());
+        dispatch(getTechnologyData());
+        dispatch(getEntertainmentData());
+        dispatch(getSportsData());
+        dispatch(getFeaturedData());
+        dispatch(getCategoryData());
+        dispatch(getPopularData(2));
+        dispatch(getPostPopularData());
+    }, [dispatch]);
+    
+    const newsReducerData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataBusiness
+    );
+
+    const newsTechnologyData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataTechnology
+    );
+
+    const newsEntertainmentData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataTechnology
+    );
+
+    const newsSportData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataTechnology
+    );
+
+    const newsFeaturedData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataFeatured
+    );
+
+    const newsCategoryData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataCategory
+    );
+
+    const newsPopularData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataPopular
+    );
+
+    const newsPostPopularData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataPostPopular
+    );
+    
     return(
         <Container>
             <CaroselTopHome/>
             <Row>
                 <Col lg={8} md={12}>
-                    <CaroselCategory/>
+                    {
+                        newsCategoryData.length > 0 ?
+                        <CaroselCategory dataValue={newsCategoryData}/>:
+                        <></>
+                    }
                 </Col>
-
                 <Col lg={4} md={12}>
                     <CategoryList />
                 </Col>
+
+                {
+                    newsFeaturedData.length > 0 ?
+                    <Col>
+                        <CaroselFeatured dataValue={newsFeaturedData} />
+                    </Col>:
+                    <></>
+                }
                 
-                <Col>
-                    <CaroselFeatured/>
-                </Col>
+                {
+                    newsReducerData.length > 0 ?
+                    <Col lg={6} md={12}>
+                        <CaroselTemplate dataValue={newsReducerData} title="Business"/>
+                    </Col>:
+                    <></>
+                }
 
-                <Col lg={6} md={12}>
-                    <CaroselTemplate/>
-                </Col>
+                {
+                    newsTechnologyData.length > 0 ?
+                    <Col lg={6} md={12}>
+                        <CaroselTemplate dataValue={newsTechnologyData} title="Technology"/>
+                    </Col>:
+                    <></>
+                }
 
-                <Col lg={6} md={12}>
-                    <CaroselTemplate/>
-                </Col>
-
-                <Col lg={6} md={12}>
-                    <CaroselTemplate/>
-                </Col>
-
-                <Col lg={6} md={12}>
-                    <CaroselTemplate/>
-                </Col>
+                {
+                    newsEntertainmentData.length > 0 ?
+                    <Col lg={6} md={12}>
+                        <CaroselTemplate dataValue={newsEntertainmentData} title="Entertainment"/>
+                    </Col>:
+                    <></>
+                }
+                
+                {
+                    newsSportData.length > 0 ?
+                    <Col lg={6} md={12}>
+                        <CaroselTemplate dataValue={newsSportData} title="Sports"/>
+                    </Col>:
+                    <></>
+                }
 
                 <Col lg={8} md={12}>
-                    <PopularList/>
-                    <PostPopular/>
-                    <img className="popular-img" src="/images/img-center-header.png" alt="img-popular"/>
-                    <PopularList/>
+                    {
+                        newsPopularData.length > 0 ?
+                        <PopularList dataValue={newsPopularData}/>:
+                        <></>
+                    }
+
+                    {
+                        newsPostPopularData.length > 0 ?
+                        <PostPopular dataValue={newsPostPopularData}/>:
+                        <></>
+                    }
+                    
+                    <img className="popular-img" 
+                        src="/images/img-center-header.png" 
+                        alt="img-popular"
+                    />
+                     {
+                        newsPopularData.length > 0 ?
+                        <PopularList dataValue={newsPopularData}/>:
+                        <></>
+                    }
                 </Col>
 
                 <Col lg={4} md={12}>
                     <FollowUs/>
                     <NewsLetter/>
-                    <Tranding/>
+                    {
+                        newsPostPopularData.length > 0 ?
+                        <Tranding dataValue={newsPostPopularData}/>:
+                        <></>
+                    }
                     <TagList data={tagsFooterTag} styleSiderBar={true}/>
                 </Col>
             </Row>

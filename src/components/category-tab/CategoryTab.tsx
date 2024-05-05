@@ -1,4 +1,4 @@
-import { categoryTagType } from "../../contant/Contant";
+import { categoryTagType } from "../../types/Types";
 import "./CategoryTab.scss";
 
 const CategoryTab = ({title, isShowViewAll}:categoryTagType) =>{

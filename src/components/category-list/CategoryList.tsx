@@ -1,4 +1,5 @@
-import { categoryTagType } from "../../contant/Contant";
+
+import { categoryTagType } from "../../types/Types";
 import CategoryTab from "../category-tab/CategoryTab";
 import "./CategoryList.scss";
 

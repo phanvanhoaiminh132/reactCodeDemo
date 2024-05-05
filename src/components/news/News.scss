@@ -25,15 +25,21 @@
             margin: 10px 0 0 10px;
         }
     }
-
-    .sub-title{
-        margin-top: 20px;
+    .block-new{
+        display: block;
+        float: left;
+        .sub-title{
+            margin-top: 20px;
+        }
+    
+        .title{
+            display: inline;
+        }
+    
+        h2,h3{
+            width: 100%;
+            float: right;
+        }    
     }
-
-    .title{
-        display: inline;
-    }
-
-
 }
 

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
+import { articlesType, propsValueSlider } from "../../types/Types";
 import "./CaroselTemplate.scss";
+import moment from "moment";
 
-const CaroselTemplate = () =>{
+const CaroselTemplate = ({dataValue,title}:propsValueSlider) =>{
     const [windowDimensions, setWindowDimensions] = useState(
         window.innerWidth
     );
@@ -24,9 +26,8 @@ const CaroselTemplate = () =>{
     return(
         <div className="carosel-template">
             <div className="category-carosel">
-                <span className="title">Business</span>
+                <span className="title">{title}</span>
             </div>
-
         
             <Swiper
                 className="swiper-template"
@@ -48,41 +49,20 @@ const CaroselTemplate = () =>{
                 }
                 speed={1200}
             >
-                <SwiperSlide>
-                    <div className="slide">
-                        <img src="/images/img-carosel-template.jpg" alt="carosel-img-template"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="slide-title">Sanctus amet sed amet ipsum lorem</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide">
-                        <img src="/images/img-carosel-template.jpg" alt="carosel-img-template"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="slide-title">Sanctus amet sed amet ipsum lorem</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide">
-                        <img src="/images/img-carosel-template.jpg" alt="carosel-img-template"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="slide-title">Sanctus amet sed amet ipsum lorem</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide">
-                        <img src="/images/img-carosel-template.jpg" alt="carosel-img-template"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="slide-title">Sanctus amet sed amet ipsum lorem</p>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide">
-                        <img src="/images/img-carosel-template.jpg" alt="carosel-img-template"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="slide-title">Sanctus amet sed amet ipsum lorem</p>
-                    </div>
-                </SwiperSlide>
+
+                {
+                    dataValue.map((item:articlesType, index:number)=>{
+                        return(
+                            <SwiperSlide key={index}>
+                                <div className="slide">
+                                    <img src={item.urlToImage} alt="carosel-img-template"/>
+                                    <p className="time-title"><span className="red">Technology</span> / {moment(item.publishedAt).format('dddd, MMMM DD, YYYY')}</p>
+                                    <p className="slide-title">{item.title}</p>
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })
+                }
                 <div className="pre arrow" ref={navigationPrevRef}><ChevronLeft/></div>
                 <div className="next arrow" ref={navigationNextRef} ><ChevronRight/></div>
             </Swiper>

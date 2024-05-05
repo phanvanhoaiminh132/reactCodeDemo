@@ -1,11 +1,12 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
+import { articlesType } from "../../types/Types";
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
+import moment from "moment";
 import "./CaroselCategory.scss";
 
-
-const CaroselCategory = () =>{
+const CaroselCategory = ({dataValue}:{dataValue:articlesType[]}) =>{
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
     return(
@@ -25,30 +26,18 @@ const CaroselCategory = () =>{
                 slidesPerView={1}
                 speed={1200}
             >
-                <SwiperSlide>
-                    <div className="slide" style={{backgroundImage: 'url(/images/img-slide-category.jpg)'}}>
-                        <span className="time-title">Technology / January 01, 2045</span>
-                        <span className="slide-title">Sanctus amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</span>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide" style={{backgroundImage: 'url(/images/img-slide-category.jpg)'}}>
-                        <span className="time-title">Technology / January 01, 2045</span>
-                        <span className="slide-title">Sanctus amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</span>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide" style={{backgroundImage: 'url(/images/img-slide-category.jpg)'}}>
-                        <span className="time-title">Technology / January 01, 2045</span>
-                        <span className="slide-title">Sanctus amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</span>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide" style={{backgroundImage: 'url(/images/img-slide-category.jpg)'}}>
-                        <span className="time-title">Technology / January 01, 2045</span>
-                        <span className="slide-title">Sanctus amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</span>
-                    </div>
-                </SwiperSlide>
+                {
+                    dataValue.map((item:articlesType, index:number)=>{
+                        return(
+                            <SwiperSlide key={index}>
+                                <div className="slide" style={{backgroundImage: `url(${item.urlToImage})`}}>
+                                    <span className="time-title">Technology / {moment(item.publishedAt).format('dddd, MMMM DD, YYYY')}</span>
+                                    <span className="slide-title">{item.title}</span>
+                                </div>
+                            </SwiperSlide>
+                        ) 
+                    })
+                }
                 <div className="pre arrow" ref={navigationPrevRef}><ChevronLeft/></div>
                 <div className="next arrow" ref={navigationNextRef} ><ChevronRight/></div>
             </Swiper>

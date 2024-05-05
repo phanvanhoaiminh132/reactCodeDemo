@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { categoryTagType } from "../../contant/Contant";
 import CategoryTab from "../category-tab/CategoryTab";
+import { articlesType, categoryTagType } from "../../types/Types";
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import "./CaroselFeatured.scss";
+import moment from "moment";
 
-const CaroselFeatured = () =>{
+const CaroselFeatured = ({dataValue}:{dataValue:articlesType[]}) =>{
     const categoryTab:categoryTagType  ={
         title: "Featured",
         isShowViewAll: true,
@@ -57,42 +58,18 @@ const CaroselFeatured = () =>{
                     }
                     speed={1200}
                 >
-                    <SwiperSlide>
-                        <div className="slide" style={{backgroundImage: 'url(/images/img-featured.jpg)'}}>
-                            <span className="time-title">Technology / January 01, 2045</span>
-                            <span className="slide-title">Sanctus amet sed amet ipsum lorem</span>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slide" style={{backgroundImage: 'url(/images/img-featured.jpg)'}}>
-                            <span className="time-title">Technology / January 01, 2045</span>
-                            <span className="slide-title">Sanctus amet sed amet ipsum lorem</span>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slide" style={{backgroundImage: 'url(/images/img-featured.jpg)'}}>
-                            <span className="time-title">Technology / January 01, 2045</span>
-                            <span className="slide-title">Sanctus amet sed amet ipsum lorem</span>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slide" style={{backgroundImage: 'url(/images/img-featured.jpg)'}}>
-                            <span className="time-title">Technology / January 01, 2045</span>
-                            <span className="slide-title">Sanctus amet sed amet ipsum lorem</span>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slide" style={{backgroundImage: 'url(/images/img-featured.jpg)'}}>
-                            <span className="time-title">Technology / January 01, 2045</span>
-                            <span className="slide-title">Sanctus amet sed amet ipsum lorem</span>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="slide" style={{backgroundImage: 'url(/images/img-featured.jpg)'}}>
-                            <span className="time-title">Technology / January 01, 2045</span>
-                            <span className="slide-title">Sanctus amet sed amet ipsum lorem</span>
-                        </div>
-                    </SwiperSlide>
+                    {
+                        dataValue.map((item:articlesType, index:number)=>{
+                            return(
+                                <SwiperSlide key={index}>
+                                    <div className="slide" style={{backgroundImage: `url(${item.urlToImage})`}}>
+                                        <span className="time-title">Technology / {moment(item.publishedAt).format('dddd, MMMM DD, YYYY')}</span>
+                                        <span className="slide-title">{item.title}</span>
+                                    </div>
+                                </SwiperSlide>
+                            ) 
+                        })
+                    }
                     <div className="pre arrow" ref={navigationPrevRef}><ChevronLeft/></div>
                     <div className="next arrow" ref={navigationNextRef} ><ChevronRight/></div>
                 </Swiper>

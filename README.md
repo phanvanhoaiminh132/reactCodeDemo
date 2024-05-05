@@ -1,15 +1,26 @@
+# Project Name
+
+NEWS website is a website that updates global news including topics such as sports, health....
+
+# Prerequisites
+
+node v16.17.1
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+clone source from github(https://github.com/phanvanhoaiminh132/reactCodeDemo).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm install`
+
+Download node_modelus
+
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open (http://localhost:3000) to view it in the browser with enviroment in .env file.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.

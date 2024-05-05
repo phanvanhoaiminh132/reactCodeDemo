@@ -1,22 +1,4 @@
-export interface tagType {
-    title?: string,
-    tags?: string[]
-}
-
-export interface linkType {
-    title?: string,
-    links?: string[]
-}
-
-export interface categoryTagType {
-    title?: string;
-    isShowViewAll?: boolean;
-}
-
-export interface tagListType {
-    data: tagType,
-    styleSiderBar?: boolean 
-}
+import { linkType, tagType } from "../types/Types";
 
 export const categoryFooterTag:tagType = {
     title: "Categories",
@@ -64,3 +46,6 @@ export const footerLink:linkType = {
         "Contact",
     ]
 }
+
+
+export const countPerPageCategory = 4;

@@ -1,5 +1,5 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { categoryTagType } from "../../contant/Contant";
+import { categoryTagType } from "../../types/Types";
 import CategoryTab from "../category-tab/CategoryTab";
 import "./NewsLetter.scss";
 

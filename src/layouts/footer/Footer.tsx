@@ -4,8 +4,9 @@ import { footerLink, categoryFooterTag } from "../../contant/Contant";
 import TagList from "../../components/tag-list/TagList";
 import LinkList from "../../components/link-list/LinkList";
 import "./Footer.scss";
+import React from "react";
 
-const Footer = () =>{
+const Footer = React.memo(() =>{
     return(
         <div id="footer">
             <Container fluid>
@@ -40,6 +41,6 @@ const Footer = () =>{
             </div>
         </div>
     )
-}
+})
 
 export default Footer;

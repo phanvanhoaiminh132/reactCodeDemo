@@ -1,10 +1,10 @@
 import { Col, Row } from "react-bootstrap";
-import { categoryTagType } from "../../contant/Contant";
 import CategoryTab from "../category-tab/CategoryTab";
 import "./Tranding.scss";
 import PostItem from "../post-item/PostItem";
+import { articlesType, categoryTagType } from "../../types/Types";
 
-const Tranding = () =>{
+const Tranding = ({dataValue}:{dataValue:articlesType[]}) =>{
     const categoryTab:categoryTagType  ={
         title: "Tranding",
         isShowViewAll: false,
@@ -17,10 +17,13 @@ const Tranding = () =>{
                 </Col>
 
                 <Col md={12}>
-                    <PostItem/>
-                    <PostItem/>
-                    <PostItem/>
-                    <PostItem/>
+                {   
+                    dataValue.map((item:articlesType, index:number)=>{
+                        return(
+                            <PostItem key={index} dataValue={item}/>
+                        ) 
+                    })
+                }
                 </Col>
             </Row>
         </div>

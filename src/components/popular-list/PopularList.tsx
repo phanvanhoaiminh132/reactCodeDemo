@@ -1,10 +1,11 @@
 import { Col, Row } from "react-bootstrap";
 import "./PopularList.scss";
-import { categoryTagType } from "../../contant/Contant";
 import CategoryTab from "../category-tab/CategoryTab";
+import { articlesType, categoryTagType } from "../../types/Types";
+import moment from "moment";
 
-const PopularList = () =>{
-    const categoryTab:categoryTagType  ={
+const PopularList = ({dataValue}:{dataValue:articlesType[]}) =>{
+    const categoryTab:categoryTagType ={
         title: "Popular",
         isShowViewAll: true,
     }
@@ -15,22 +16,20 @@ const PopularList = () =>{
                     <CategoryTab {...categoryTab}/>
                 </Col>
 
-                <Col lg={6} md={12}>
-                    <div className="popular-item">
-                        <img src="/images/img-popular.jpg" alt="img-popular"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="title">Sanctus amet sed amet ipsum lorem</p>
-                        <p className="description">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
-                    </div>
-                </Col>
-                <Col lg={6} md={12}>
-                    <div className="popular-item">
-                        <img src="/images/img-popular.jpg" alt="img-popular"/>
-                        <p className="time-title"><span className="red">Technology</span> / January 01, 2045</p>
-                        <p className="title">Sanctus amet sed amet ipsum lorem</p>
-                        <p className="description">Rebum dolore duo et vero ipsum clita, est ea sed duo diam ipsum, clita at justo, lorem amet vero eos sed sit...</p>
-                    </div>
-                </Col>
+                {
+                    dataValue.map((item:articlesType, index:number)=>{
+                        return(
+                            <Col lg={6} md={12} key={index}>
+                                <div className="popular-item">
+                                    <img src={item.urlToImage} alt="img-popular"/>
+                                    <p className="time-title"><span className="red">Technology</span> / {moment(item.publishedAt).format('dddd, MMMM DD, YYYY')}</p>
+                                    <p className="title">{item.title.slice(0,65)}...</p>
+                                    <p className="description">{item.description.slice(0, 100)}...</p>
+                                </div>
+                            </Col>
+                        ) 
+                    })
+                }
             </Row>
         </div>
     )

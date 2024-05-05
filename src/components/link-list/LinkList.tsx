@@ -1,10 +1,9 @@
-import React from "react";
-import { linkType } from "../../contant/Contant";
 import { ChevronRight } from "react-bootstrap-icons";
+import { linkType } from "../../types/Types";
 import "./LinkList.scss";
 
 
-const LinkList: React.FC<linkType> = (data: linkType) =>{
+const LinkList = (data: linkType) =>{
     return(
         <div className="link">
             <p className="link-title">{data.title}</p>

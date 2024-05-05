@@ -5,8 +5,27 @@ import Tranding from "../../components/tranding/Tranding";
 import TagList from "../../components/tag-list/TagList";
 import { tagsFooterTag } from "../../contant/Contant";
 import News from "../../components/news/News";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { articlesType } from "../../types/Types";
+import { RootState } from "../../reducers";
+import { getPopularData, getPostDetailData } from "../../actions/NewsAction";
 
 const SingleNews = () =>{
+    const dispatch = useDispatch<any>();
+
+    useEffect(() => {
+        dispatch(getPopularData(2));
+        dispatch(getPostDetailData());
+    }, [dispatch]);
+
+    const newsPostPopularData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataPostPopular
+    );
+
+    const newsPostDetailData:articlesType[] = useSelector(
+        (state:RootState) => state.NewsReducer.dataPostDetail
+    );
     return(
         <Container>
         <Row>
@@ -22,13 +41,21 @@ const SingleNews = () =>{
             </Col>
 
             <Col lg={8} md={12}>
-               <News/>
+                {
+                    newsPostDetailData.length > 0 ?
+                    <News dataValue={newsPostDetailData[0]}/>:
+                    <></>
+                }
             </Col>
 
             <Col lg={4} md={12}>
                 <FollowUs/>
                 <NewsLetter/>
-                <Tranding />
+                {
+                    newsPostPopularData.length > 0 ?
+                    <Tranding dataValue={newsPostPopularData}/>:
+                    <></>
+                }
                 <TagList data={tagsFooterTag} styleSiderBar={true}/>
             </Col>
         </Row>
