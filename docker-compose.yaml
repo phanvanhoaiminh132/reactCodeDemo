@@ -1,0 +1,24 @@
+version: '1.0'
+
+services:
+  web:
+    container_name: news
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    develop:
+      watch:
+        - action: sync
+          path: ./:/app
+          target: /app
+        - action: rebuild
+          path: package.json

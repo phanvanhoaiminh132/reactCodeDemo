@@ -6,7 +6,7 @@ import { Navigation, Scrollbar } from 'swiper/modules';
 import moment from "moment";
 import "./CaroselCategory.scss";
 
-const CaroselCategory = ({dataValue}:{dataValue:articlesType[]}) =>{
+const CaroselCategory = React.memo(({dataValue}:{dataValue:articlesType[]}) =>{
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
     return(
@@ -43,6 +43,6 @@ const CaroselCategory = ({dataValue}:{dataValue:articlesType[]}) =>{
             </Swiper>
         </div>
     )
-}
+})
 
 export default CaroselCategory;

@@ -2,7 +2,9 @@ import { Breadcrumb, Col, Row } from "react-bootstrap";
 import "./News.scss";
 import { articlesType } from "../../types/Types";
 import moment from "moment";
-const News = ({dataValue}:{dataValue:articlesType}) =>{
+import React from "react";
+
+const News = React.memo(({dataValue}:{dataValue:articlesType}) =>{
     return(
         <div className="news">
             <Row>
@@ -35,6 +37,6 @@ const News = ({dataValue}:{dataValue:articlesType}) =>{
             </Row>
         </div>
     )
-}
+})
 
 export default News;

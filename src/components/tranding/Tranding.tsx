@@ -3,8 +3,9 @@ import CategoryTab from "../category-tab/CategoryTab";
 import "./Tranding.scss";
 import PostItem from "../post-item/PostItem";
 import { articlesType, categoryTagType } from "../../types/Types";
+import React from "react";
 
-const Tranding = ({dataValue}:{dataValue:articlesType[]}) =>{
+const Tranding = React.memo(({dataValue}:{dataValue:articlesType[]}) =>{
     const categoryTab:categoryTagType  ={
         title: "Tranding",
         isShowViewAll: false,
@@ -28,6 +29,6 @@ const Tranding = ({dataValue}:{dataValue:articlesType[]}) =>{
             </Row>
         </div>
     )
-}
+})
 
 export default Tranding;

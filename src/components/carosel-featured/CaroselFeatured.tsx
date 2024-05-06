@@ -7,7 +7,7 @@ import { Navigation, Scrollbar } from 'swiper/modules';
 import "./CaroselFeatured.scss";
 import moment from "moment";
 
-const CaroselFeatured = ({dataValue}:{dataValue:articlesType[]}) =>{
+const CaroselFeatured = React.memo(({dataValue}:{dataValue:articlesType[]}) =>{
     const categoryTab:categoryTagType  ={
         title: "Featured",
         isShowViewAll: true,
@@ -76,6 +76,6 @@ const CaroselFeatured = ({dataValue}:{dataValue:articlesType[]}) =>{
             </div>
         </>
     )
-}
+})
 
 export default CaroselFeatured;

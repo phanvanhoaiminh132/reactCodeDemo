@@ -1,8 +1,9 @@
 import { Col, Row } from "react-bootstrap"
 import PostItem from "../post-item/PostItem"
 import { articlesType } from "../../types/Types";
+import React from "react";
 
-const PostPopular = ({dataValue}:{dataValue:articlesType[]}) =>{
+const PostPopular = React.memo(({dataValue}:{dataValue:articlesType[]}) =>{
     return(
         <div className="post-popular">
             <Row>
@@ -19,6 +20,6 @@ const PostPopular = ({dataValue}:{dataValue:articlesType[]}) =>{
             </Row>
         </div>
     )
-}
+})
 
 export default PostPopular;

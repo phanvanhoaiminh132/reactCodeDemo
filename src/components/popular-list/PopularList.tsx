@@ -3,8 +3,9 @@ import "./PopularList.scss";
 import CategoryTab from "../category-tab/CategoryTab";
 import { articlesType, categoryTagType } from "../../types/Types";
 import moment from "moment";
+import React from "react";
 
-const PopularList = ({dataValue}:{dataValue:articlesType[]}) =>{
+const PopularList = React.memo(({dataValue}:{dataValue:articlesType[]}) =>{
     const categoryTab:categoryTagType ={
         title: "Popular",
         isShowViewAll: true,
@@ -33,6 +34,6 @@ const PopularList = ({dataValue}:{dataValue:articlesType[]}) =>{
             </Row>
         </div>
     )
-}
+})
 
 export default PopularList;

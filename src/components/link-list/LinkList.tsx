@@ -1,9 +1,10 @@
 import { ChevronRight } from "react-bootstrap-icons";
 import { linkType } from "../../types/Types";
 import "./LinkList.scss";
+import React from "react";
 
 
-const LinkList = (data: linkType) =>{
+const LinkList = React.memo((data: linkType) =>{
     return(
         <div className="link">
             <p className="link-title">{data.title}</p>
@@ -24,6 +25,6 @@ const LinkList = (data: linkType) =>{
             </div>
         </div>
     )
-}
+})
 
 export default LinkList;

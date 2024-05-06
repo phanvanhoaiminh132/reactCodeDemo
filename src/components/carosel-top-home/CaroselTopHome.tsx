@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import './CaroselTopHome.scss';
 
-const CaroselTopHome = () =>{
+const CaroselTopHome = React.memo(() =>{
     const [windowDimensions, setWindowDimensions] = useState(
         window.innerWidth
     );
@@ -81,7 +81,6 @@ const CaroselTopHome = () =>{
             </Swiper>
         </div>
     )
-}
-
+})
 
 export default CaroselTopHome;

@@ -6,7 +6,7 @@ import { articlesType, propsValueSlider } from "../../types/Types";
 import "./CaroselTemplate.scss";
 import moment from "moment";
 
-const CaroselTemplate = ({dataValue,title}:propsValueSlider) =>{
+const CaroselTemplate = React.memo(({dataValue,title}:propsValueSlider) =>{
     const [windowDimensions, setWindowDimensions] = useState(
         window.innerWidth
     );
@@ -68,6 +68,6 @@ const CaroselTemplate = ({dataValue,title}:propsValueSlider) =>{
             </Swiper>
         </div>
     )
-}
+})
 
 export default CaroselTemplate;

@@ -1,5 +1,6 @@
 # Use an image containing Node.js LTS version
-FROM node:16.17.1
+ARG NODE_VERSION=16.17.1
+FROM node:${NODE_VERSION}-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -11,13 +12,4 @@ COPY package*.json ./
 RUN npm install
 
 # Copy all files from the current directory into the /app directory in the container
-COPY . .
-
-# Build the ReactJS application
-RUN npm run build
-
-# Expose port 80 of the container
-EXPOSE 80
-
-# Start a web server to serve the built ReactJS application
-CMD ["npx", "serve", "-s", "-l", "80", "build"]
+COPY --chown=app:app . /app
