@@ -1,4 +1,7 @@
-### Building and running your application
+## dowload and setting docker
+Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
+
+# Building and running your application
 
 ## Clone source
 clone source from github: (https://github.com/phanvanhoaiminh132/reactCodeDemo).
@@ -7,16 +10,12 @@ clone source from github: (https://github.com/phanvanhoaiminh132/reactCodeDemo).
 open terminal and run: `cd reactCodeDemo`
 
 ## build docker file
-run: `docker-compose -f docker-compose-dev.yaml up`
-When you're ready, start your application by running:
-`docker compose up --build`.
+run: `docker-compose build --no-cache`
+When you're ready, start your application by running: `docker compose up --watch`.
 
+Your application will be available at http://localhost:3001.
 
-
-
-Your application will be available at http://localhost:3000.
-
-### Deploying your application to the cloud
+# Deploying your application to the cloud
 
 First, build your image, e.g.: `docker build -t myapp .`.
 If your cloud uses a different CPU architecture than your development
@@ -29,5 +28,5 @@ Then, push it to your registry, e.g. `docker push myregistry.com/myapp`.
 Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
 docs for more detail on building and pushing.
 
-### References
+# References
 * [Docker's Node.js guide](https://docs.docker.com/language/nodejs/)
