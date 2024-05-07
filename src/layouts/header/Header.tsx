@@ -18,7 +18,7 @@ const Header = React.memo(() =>{
                 <Container fluid>
                     <div className="top-header">
                         <div className="top-header-left">
-                            <span className="top-title">Trandings</span>
+                            <span className="top-title">Tranding</span>
                             <Swiper
                                 className="header-swiper"
                                 modules={[Navigation, Scrollbar, Autoplay]}

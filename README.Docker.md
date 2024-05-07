@@ -13,7 +13,7 @@ open terminal and run: `cd reactCodeDemo`
 run: `docker-compose build --no-cache`
 When you're ready, start your application by running: `docker compose up --watch`.
 
-Your application will be available at http://localhost:3001.
+Your application will be available at http://localhost:3000.
 
 # Deploying your application to the cloud
 
