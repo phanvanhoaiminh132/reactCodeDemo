@@ -9,7 +9,7 @@ services:
     volumes:
       - '/news'
     ports:
-      - 3001:3001
+      - 3000:3000
     environment:
       - NODE_ENV=development
     tty: true
